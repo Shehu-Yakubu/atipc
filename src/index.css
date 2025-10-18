@@ -1,4 +1,6 @@
 :root {
-  --brand: #0b5fff;
-  --muted: #6b7280;
+  /* --brand: #0b5fff; */
+  /* --muted: #6b7280; */
+  --brand: rgb(4, 144, 4);
+  --muted: #ff7900;
 }
