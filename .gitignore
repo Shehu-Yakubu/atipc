@@ -1,0 +1,78 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore build output and environment files
+.env
+.env.local
+.env.production
+.vercel/
+*.lock
+
+# Vite cache
+vite.config.ts.timestamp-*
+
+# .github/workflows/deploy.yml
+# --------------------------------------------
+name: Deploy to Vercel
+
+on:
+    push:
+        branches: [ main ]
+
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+
+    steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+
+
+        - name: Install dependencies
+          run: npm install
+
+
+        - name: Build project
+          run: npm run build
+
+
+        - name: Deploy to Vercel
+          uses: amondnet/vercel-action@v25
+          with:
+            vercel-token: ${{ secrets . VERCEL_TOKEN }}
+            vercel-org-id: ${{ secrets . VERCEL_ORG_ID }}
+            vercel-project-id: ${{ secrets . VERCEL_PROJECT_ID }}
+            working-directory: ./
+            prod: true
+          env:
+            VERCEL_TOKEN: ${{ secrets . VERCEL_TOKEN }}

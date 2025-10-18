@@ -1,0 +1,20 @@
+[
+  {
+    "id": "agri",
+    "title": "Agriculture & Agro-processing",
+    "summary": "Large arable land, growing value-add opportunities in processing and export.",
+    "link": "/opportunities#agri"
+  },
+  {
+    "id": "renew",
+    "title": "Renewable Energy",
+    "summary": "Solar and mini-grid projects ideal for rural electrification and industrial clusters.",
+    "link": "/opportunities#renew"
+  },
+  {
+    "id": "manu",
+    "title": "Light Manufacturing",
+    "summary": "Investment in textiles, packaging, and consumer goods for domestic and regional markets.",
+    "link": "/opportunities#manu"
+  }
+]
